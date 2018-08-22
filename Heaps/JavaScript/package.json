@@ -1,0 +1,31 @@
+{
+  "name": "interviews",
+  "version": "1.0.0",
+  "description": "Heaps",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "N/A"
+  },
+  "author": "",
+  "license": "",
+  "bugs": {
+    "url": ""
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "ava": "^0.25.0",
+    "jest": "^23.5.0"
+  },
+  "ava": {
+    "files": [
+      "**/*.spec.js"
+    ],
+    "failFast": true,
+    "tap": false
+  }
+}
