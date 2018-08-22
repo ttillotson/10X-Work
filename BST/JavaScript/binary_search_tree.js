@@ -9,7 +9,7 @@ class BinarySearchTree {
         // First insert is assigned to root
         if (!this.root) {
             this.root = new BSTNode(value);
-            this.root.parents = null;
+            this.root.parent = null;
             return this.root;
         }
 
