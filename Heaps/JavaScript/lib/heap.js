@@ -130,7 +130,7 @@ class MinHeap {
         return foundItemIndices;
     }
 
-    heapifyUp(array, childIndex, range, compare) {
+    heapifyUp(array, childIndex, range = array.length, compare) {
         // Take last element (last in array or the bottom left in a tree) in
         // a heap container and lift him up until we find the parent element
         // that is less then the current new one.
@@ -144,7 +144,7 @@ class MinHeap {
         return array;
     }
 
-    heapifyDown(array, parentIndex, range, compare) {
+    heapifyDown(array, parentIndex, range = array.length, compare) {
         // Compare the root element to its children and swap root with the smallest
         // of children. Do the same for next children after swap.
         parentIndex = parentIndex ? parentIndex : 0;
