@@ -57,21 +57,21 @@ describe('BinaryMinHeap', () => {
         });
         
         test('pushes correctly', () => {
-            heap.push(7);
+            heap.add(7);
             expect(heap._store()).toEqual([7]);
 
-            heap.push(5);
+            heap.add(5);
             expect(heap._store()).toEqual([5, 7]);
             
-            heap.push(6);
+            heap.add(6);
             expect(heap._store()).toEqual([5, 7, 6]);
             
-            heap.push(4);
+            heap.add(4);
             expect(heap._store()).toEqual([4, 5, 6, 7]);
         });
 
         test('extracts correctly', () => {
-            [7, 5, 6, 4].forEach(el => heap.push(el));
+            [7, 5, 6, 4].forEach(el => heap.add(el));
 
             expect(heap.extract()).toEqual(4);
             expect(heap._store()).toEqual([5, 7, 6]);
