@@ -171,6 +171,11 @@ class MinHeap {
     toString() {
         return this.store.toString();
     }
+
+    // For Testing Purposes Only
+    _store() {
+        return this.store.freeze;
+    }
 }
 
 module.exports = MinHeap;

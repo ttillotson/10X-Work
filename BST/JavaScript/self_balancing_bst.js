@@ -13,7 +13,7 @@ class BinarySearchTree {
         // First insert is assigned to root
         if (!this.root) {
             this.root = new BSTNode(value);
-            this.root.parents = null;
+            this.root.parent = null;
             this.root.color = black;
             return this.root;
         }
@@ -50,6 +50,7 @@ class BinarySearchTree {
     balanceSubtree(zNode) {
         const black = "black";
         const red = "red";
+        let parent;
 
         if (zNode.uncle.color === red) {
             if (zNode.grandparent !== this.root) {
@@ -59,7 +60,7 @@ class BinarySearchTree {
             zNode.uncle.color = black;
         } else if (zNode.uncle.color === black) {
             let grandparent = zNode.grandparent;
-            let parent = zNode.parent;
+            parent = zNode.parent;
 
             // Triangle
             if ((zNode.value <= parent.value && parent.value > grandparent.value) ||
@@ -74,7 +75,7 @@ class BinarySearchTree {
             // Line
             } else {
                 // Account for change of root
-                if (grandparent == this.root) this.root = parent;
+                if (grandparent === this.root) this.root = parent;
                 let cousin = (parent.value <= zNode.value ? parent.left : parent.right);
                 
                 // # Move Parent up
